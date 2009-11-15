@@ -1,0 +1,53 @@
+/* this file is generated */
+typedef struct Cats {
+		const char *category;
+		const char *descr;
+} Cats;
+
+static Cats cats[] = {
+	{"archivers",		"Archivers"}, 
+	{"audio",		"Audio tools"}, 
+	{"benchmarks",		"Benchmarking tools"}, 
+	{"biology",		"Software for the biological sciences"}, 
+	{"cad",		"CAD tools"}, 
+	{"chat",		"Communication programs"}, 
+	{"comms",		"Communication utilities"}, 
+	{"converters",		"Document format and character code converters"}, 
+	{"cross",		"Cross-platform development utilities"}, 
+	{"crosspkgtools",		"Tools for cross-building pkgsrc"}, 
+	{"databases",		"Databases"}, 
+	{"devel",		"Development utilities"}, 
+	{"editors",		"Editors"}, 
+	{"emulators",		"Emulators for other operating systems"}, 
+	{"finance",		"Monetary, financial and related applications"}, 
+	{"fonts",		"Fonts"}, 
+	{"games",		"Games"}, 
+	{"geography",		"Software for geographical-related uses"}, 
+	{"graphics",		"Graphics tools and libraries"}, 
+	{"ham",		"Wireless communication tools and applications"}, 
+	{"inputmethod",		"Input method tools and libraries"}, 
+	{"lang",		"Programming languages"}, 
+	{"mail",		"Electronic mail utilities"}, 
+	{"math",		"Mathematics"}, 
+	{"mbone",		"Multi-cast backBone applications"}, 
+	{"meta-pkgs",		"Collections of other packages"}, 
+	{"misc",		"Miscellaneous utilities"}, 
+	{"multimedia",		"Multimedia utilities"}, 
+	{"net",		"Networking tools"}, 
+	{"news",		"Network news"}, 
+	{"parallel",		"Applications dealing with parallelism in computing"}, 
+	{"pkgtools",		"Tools for use in the packages collection"}, 
+	{"print",		"Desktop publishing"}, 
+	{"regress",		"Regression tests for pkgsrc infrastructure"}, 
+	{"security",		"Security tools"}, 
+	{"shells",		"Shells"}, 
+	{"sysutils",		"System utilities"}, 
+	{"textproc",		"Text processing utilities (does not include desktop publishing)"}, 
+	{"time",		"Clocks, calendars, daily planners and other time related applications"}, 
+	{"wip",		"WIP pkgsrc packages"}, 
+	{"wm",		"X11 window managers, configuration tools, and themes"}, 
+	{"www",		"Packages related to the World Wide Web"}, 
+	{"x11",		"Packages to support the X window system"}, 
+	{"system",	"Base system"},
+	{NULL,	NULL}
+};

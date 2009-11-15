@@ -1,0 +1,88 @@
+PKG_SELECT(1)           NetBSD General Commands Manual           PKG_SELECT(1)
+
+NNAAMMEE
+     ppkkgg__sseelleecctt -- curses based pkgsrc system browser / manager
+
+SSYYNNOOPPSSIISS
+     ppkkgg__sseelleecctt [--bb _p_k_g_s_r_c_d_i_r] [--KK _p_k_g___d_b_d_i_r] [--cc _c_o_n_f _f_i_l_e] [--ll] [--mm]
+                [--uu _N_e_t_B_S_D _f_t_p _m_i_r_r_o_r] [--dd _d_o_w_n_l_o_a_d _u_r_l] [--ss]
+
+DDEESSCCRRIIPPTTIIOONN
+     ppkkgg__sseelleecctt will display a curses file browser for the pkg system. You can
+     browse _p_k_g_s_r_c and gather various informations about packages, like avail-
+     able version, installed version, comment and homepage. A simple paging
+     system lets you read information files.  You can browse both installed
+     and uninstalled packages, as well as dependencies list and perform vari-
+     ous administrative tasks to them. A package finder system helps you to
+     easily locate a package by its name.  ppkkgg__sseelleecctt can handle either source
+     or binary installations from local pkgsrc, local binary packages direc-
+     tory (see _P_A_C_K_A_G_E_S environment variable below), or binary only when using
+     the pkgsrc-over-ftp feature.
+
+     Also, if no _p_k_g_s_r_c is installed, ppkkgg__sseelleecctt offers ability fo fetch it by
+     FTP, CVS or directory copy. It is also possible to update an existing
+     pkgsrc via the interface.
+
+     ppkkgg__sseelleecctt user interface is quite self explainatory, every available
+     shortcut is shown and annotated.
+
+OOPPTTIIOONNSS
+     The following options are available:
+
+     --bb _p_k_g_s_r_c_d_i_r
+                 Set _p_k_g_s_r_c_d_i_r as the pkgsrc base directory. Default is set to
+                 _/_u_s_r_/_p_k_g_s_r_c
+
+     --KK _p_k_g___d_b_d_i_r
+                 Set _p_k_g___d_b_d_i_r as the package database directory. Default is
+                 set to _/_v_a_r_/_d_b_/_p_k_g
+
+     --cc _c_o_n_f _f_i_l_e
+                 Set _c_o_n_f _f_i_l_e as the configuration file. Default is set to
+                 _/_u_s_r_/_p_k_g_/_e_t_c_/_p_k_g___s_e_l_e_c_t_._c_o_n_f
+
+     --ll          Enable pkgsrc over FTP (don't need _p_k_g_s_r_c to be installed)
+
+     --mm          Do not read Makefiles when browsing _p_k_g_s_r_c over FTP
+
+     --uu _N_e_t_B_S_D _f_t_p _m_i_r_r_o_r
+                 Defines a _N_e_t_B_S_D _f_t_p _m_i_r_r_o_r for live pkgsrc-over-FTP
+
+     --dd _u_r_l      Set _u_r_l as the pkgsrc tree download url.  _u_r_l can be one of
+
+                 _f_t_p_:_/_/_f_t_p_._m_i_r_r_o_r_._N_e_t_B_S_D_._o_r_g_/_p_u_b_/_N_e_t_B_S_D
+                 _c_v_s_:_/_/_[_:_p_s_e_r_v_e_r_:_]_a_n_o_n_c_v_s_@_a_n_o_n_c_v_s_._m_i_r_r_o_r_._N_e_t_B_S_D_._o_r_g_:_/_c_v_s_r_o_o_t
+                 _f_i_l_e_:_/_/_/_s_o_m_e_/_p_a_t_h
+
+     --ss          Force shell output instead of curses progress bars
+
+EENNVVIIRROONNMMEENNTT
+     PKGSRCDIR
+             If set, this variable changes _p_k_g_s_r_c base directory to _P_K_G_S_R_C_D_I_R.
+             Default is set to _/_u_s_r_/_p_k_g_s_r_c
+     PKG_DBDIR
+             If set, this variable changes the package database directory
+             path.  Default is set to _/_v_a_r_/_d_b_/_p_k_g
+     PACKAGES
+             If set, ppkkgg__sseelleecctt fallback to binary mode, pkgsrc hierarchy will
+             be build from packages found in _P_A_C_K_A_G_E_S.  In binary mode, it is
+             also possible to install system base archives, just copy archives
+             (base.tgz, comp.tgz...) to _P_A_C_K_A_G_E_S and a new _s_y_s_t_e_m category
+             will appear on the category list.
+
+FFIILLEESS
+     /usr/pkg/etc/pkg_select.conf
+     /usr/pkg/share/examples/pkg_select/pkg_select.conf.example
+     /usr/pkg/share/pkg_select/mirrors.ftp
+     /usr/pkg/share/pkg_select/mirrors.cvs
+
+NNOOTTEESS
+     When manipulating packages, ppkkgg__sseelleecctt obviously needs to be ran as root.
+
+SSEEEE AALLSSOO
+     pkg_add(1), pkg_delete(1), packages(7), and make(1)
+
+AAUUTTHHOORR
+     iMil <imil@gcu.info>
+
+NetBSD 5.0_RC2                 December 07, 2005                NetBSD 5.0_RC2

@@ -1,0 +1,174 @@
+<html>
+<head>
+        <title>
+                 December 07, 2005 PKG_SELECT 1
+
+        </title>
+        <style type="text/css">
+        <!--
+                body { margin-left:4%; }
+                H1, H2, H3, H4, H5 {
+                        color: maroon; padding: 4pt; margin-left: -4%;
+                        border: solid; border-width: thin; width: 100%;
+                        background: rgb(204,204,255)
+                }
+        -->
+        </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+        <h3 id="NAME">
+        NAME
+        </h3>
+<b>pkg_select</b>
+- curses based pkgsrc system browser / manager
+        <h3 id="SYNOPSIS">
+        SYNOPSIS
+        </h3>
+<b>pkg_select</b>
+[<b>-</b><b>b</b><i></i><i> pkgsrcdir</i>]
+[<b>-</b><b>K</b><i></i><i> pkg_dbdir</i>]
+[<b>-</b><b>c</b><i></i><i> conf</i><i> file</i>]
+[<b>-</b><b>l</b>]
+[<b>-</b><b>m</b>]
+[<b>-</b><b>u</b><i></i><i> NetBSD</i><i> ftp</i><i> mirror</i>]
+[<b>-</b><b>d</b><i></i><i> download</i><i> url</i>]
+[<b>-</b><b>s</b>]
+        <h3 id="DESCRIPTION">
+        DESCRIPTION
+        </h3>
+<b>pkg_select</b>
+will display a curses file browser for the pkg system. You can browse
+<i></i><i>pkgsrc</i>
+and gather
+various informations about packages, like available version, installed version,
+comment and homepage. A simple paging system lets you read information files.
+You can browse both installed and uninstalled packages, as well as dependencies
+list and perform various administrative tasks to them. A package finder system
+helps you to easily locate a package by its name.
+<b>pkg_select</b>
+can handle either source or binary installations from local pkgsrc, local
+binary packages directory (see
+<i></i><i>PACKAGES</i>
+environment variable below), or binary only when using the pkgsrc-over-ftp
+feature.
+        <p>
+Also, if no
+<i></i><i>pkgsrc</i>
+is installed,
+<b>pkg_select</b>
+offers ability fo fetch it by FTP, CVS or directory copy. It is also possible to
+update an existing pkgsrc via the interface.
+        <p>
+<b>pkg_select</b>
+user interface is quite self explainatory, every available shortcut is
+shown and annotated.
+        <h3 id="OPTIONS">
+        OPTIONS
+        </h3>
+The following options are available:
+<dl compact>
+<p><dt><b>-</b><b>b</b><i></i><i> pkgsrcdir</i><dd>
+Set
+<i></i><i>pkgsrcdir</i>
+as the pkgsrc base directory. Default is set to
+<code></code><code>/usr/pkgsrc</code>
+<p><dt><b>-</b><b>K</b><i></i><i> pkg_dbdir</i><dd>
+Set
+<i></i><i>pkg_dbdir</i>
+as the package database directory. Default is set to
+<code></code><code>/var/db/pkg</code>
+<p><dt><b>-</b><b>c</b><i></i><i> conf</i><i> file</i><dd>
+Set
+<i></i><i>conf</i><i> file</i>
+as the configuration file. Default is set to
+<code></code><code>/usr/pkg/etc/pkg_select.conf</code>
+<p><dt><b>-</b><b>l</b><dd>
+Enable pkgsrc over FTP (don't need
+<i></i><i>pkgsrc</i>
+to be installed)
+<p><dt><b>-</b><b>m</b><dd>
+Do not read Makefiles when browsing
+<i></i><i>pkgsrc</i>
+over FTP
+<p><dt><b>-</b><b>u</b><i></i><i> NetBSD</i><i> ftp</i><i> mirror</i><dd>
+Defines a
+<i></i><i>NetBSD</i><i> ftp</i><i> mirror</i>
+for live pkgsrc-over-FTP
+<p><dt><b>-</b><b>d</b><i></i><i> url</i><dd>
+Set
+<i></i><i>url</i>
+as the pkgsrc tree download url.
+<i></i><i>url</i>
+can be one of
+        <p>
+<dl>
+<dd>
+<code></code><code>ftp://ftp.mirror.NetBSD.org/pub/NetBSD</code>
+<dd>
+<code></code><code>cvs://[:pserver:]anoncvs@anoncvs.mirror.NetBSD.org:/cvsroot</code>
+<dd>
+<code></code><code>file:///some/path</code>
+</dl>
+<p><dt><b>-</b><b>s</b><dd>
+Force shell output instead of curses progress bars
+</dl>
+        <h3 id="ENVIRONMENT">
+        ENVIRONMENT
+        </h3>
+<dl compact>
+<dt><code></code><code>PKGSRCDIR</code><dd>
+If set, this variable changes
+<i></i><i>pkgsrc</i>
+base directory to
+<i></i><i>PKGSRCDIR</i>.
+Default is set to
+<code></code><code>/usr/pkgsrc</code>
+<dt><code></code><code>PKG_DBDIR</code><dd>
+If set, this variable changes the package database directory path.
+Default is set to
+<code></code><code>/var/db/pkg</code>
+<dt><code></code><code>PACKAGES</code><dd>
+If set,
+<b>pkg_select</b>
+fallback to binary mode, pkgsrc hierarchy will be build from packages found in
+<i></i><i>PACKAGES</i>.
+In binary mode, it is also possible to install system base archives, just copy
+archives (base.tgz, comp.tgz...) to
+<i></i><i>PACKAGES</i>
+and a new
+<i></i><i>system</i>
+category will appear on the category list.
+</dl>
+        <h3 id="FILES">
+        FILES
+        </h3>
+<dl compact>
+<dt><code></code><code>/usr/pkg/etc/pkg_select.conf</code><dd>
+<dt><code></code><code>/usr/pkg/share/examples/pkg_select/pkg_select.conf.example</code><dd>
+<dt><code></code><code>/usr/pkg/share/pkg_select/mirrors.ftp</code><dd>
+<dt><code></code><code>/usr/pkg/share/pkg_select/mirrors.cvs</code><dd>
+</dl>
+        <p>
+        <h3 id="NOTES">
+        NOTES
+        </h3>
+When manipulating packages,
+<b>pkg_select</b>
+obviously needs to be ran as root.
+        <p>
+        <h3 id="SEE ALSO">
+        SEE ALSO
+        </h3>
+<a href="../html1/pkg_add.html">pkg_add(1)</a>,
+<a href="../html1/pkg_delete.html">pkg_delete(1)</a>,
+<a href="../html7/packages.html">packages(7)</a>,
+and
+<a href="../html1/make.html">make(1)</a>
+        <p>
+        <h3 id="AUTHOR">
+        AUTHOR
+        </h3>
+iMil <imil@gcu.info>
+</body>
+</html>
+

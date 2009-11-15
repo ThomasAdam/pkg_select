@@ -45,7 +45,7 @@ static int partialmatch(const char *, const char *);
 
 /* from pkgfind */
 static const char *skip[] = {
-        ".", "..", "CVS", "bootstrap", "doc", "cross", "mk", 
+        ".", "..", ".git", "CVS", "bootstrap", "doc", "cross", "mk", 
 	"distfiles", "packages", "licenses", "templates", NULL
 };
 
